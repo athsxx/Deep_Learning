@@ -75,6 +75,7 @@ def translate_audio():
         
         # Translation
         src_text = [transcription]
+        print(src_text)
         translated = Tmodel.generate(**tokenizer(src_text, return_tensors="pt", padding=True))
         translated_text = [tokenizer.decode(t, skip_special_tokens=True) for t in translated][0]
         print(translated_text)
